@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 1234
+server:
+  port: 8081
+mybatis-plus:
+  mapper-location: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.cop.pojo
+  configuration:
+    map-underscore-to-camel-case: false
+
+
+logging:
+  level:
+    com.cop.mapper: debug
+
+jwt:
+  tokenHeader: Authorization
+  secret: yeb-secret
+  expiration: 604800
+  tokenHead: Bearer

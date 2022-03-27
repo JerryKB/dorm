@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cop.mapper.DormMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cop.pojo.Dorm">
+        <id column="id" property="id" />
+        <result column="bid" property="bid" />
+        <result column="now_count" property="now_count" />
+        <result column="contain_count" property="contain_count" />
+        <result column="situation" property="situation" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, bid, now_count, contain_count, situation
+    </sql>
+    <select id="getClassDorms" parameterType="com.cop.pojo.Student" resultType="com.cop.pojo.Dorm">
+        select DISTINCT d.* from t_student s,t_dorm d where s.sclass=#{sclass} and s.major=#{major} and s.did=d.id
+    </select>
+
+</mapper>

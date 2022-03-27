@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cop.mapper.AdjustRoomMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cop.pojo.AdjustRoom">
+        <id column="id" property="id"/>
+        <result column="Sid" property="Sid" />
+        <result column="t_id" property="t_id" />
+        <result column="reason" property="reason" />
+        <result column="edit_time" property="edit_time" />
+        <result column="permit_time" property="permit_time" />
+        <result column="permit_id" property="permit_id" />
+        <result column="permit_state" property="permit_state" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,Sid, t_id, reason, edit_time, permit_time, permit_id, permit_state
+    </sql>
+
+</mapper>

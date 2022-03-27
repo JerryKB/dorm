@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cop.mapper.StudentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cop.pojo.Student">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="real_name" property="real_name" />
+        <result column="role_name" property="role_name" />
+        <result column="sex" property="sex" />
+        <result column="did" property="did" />
+        <result column="sclass" property="sclass" />
+        <result column="major" property="major" />
+        <result column="situation" property="situation" />
+        <result column="checkin_time" property="ckeckin_time" />
+        <result column="identity" property="identity" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, username, password, real_name, role_name, sex, did, sclass, major, situation, checkin_time, identity
+    </sql>
+    <select id="getDorms" resultType="com.cop.pojo.Student">
+        select s.id,s.real_name,s.sclass,s.major,s.role_name ,s.did ,s.checkin_time from t_student s,t_dorm d where  s.did=#{did} and s.did=d.id
+    </select>
+
+</mapper>
